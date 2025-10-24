@@ -33,24 +33,34 @@ const FAQSection = () => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-6">
-        {/* Decorative Header like NaturalGemstoneHeader */}
-        <div className="w-full flex flex-col items-center space-y-4 mb-12">
-          <div className="flex items-center space-x-4">
-            <span className="text-red-500 text-2xl">🍃</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800">
-              🌸 Frequently Asked Questions
-            </h2>
-            <span className="text-red-500 text-2xl">🍃</span>
-          </div>
 
-          {/* Gradient Bar */}
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-2 bg-red-500 rounded-sm shadow-md"></div>
-            <div className="w-48 h-2 bg-gradient-to-r from-red-500 via-orange-400 to-yellow-400 rounded-full shadow-md"></div>
-            <div className="w-4 h-2 bg-red-500 rounded-sm shadow-md"></div>
-          </div>
-        </div>
+        {/* 🌿 Decorative Header (Responsive) */}
+<div className="w-full flex flex-col items-center text-center mb-12 px-4">
+  <div className="flex items-center justify-center space-x-2 sm:space-x-3 md:space-x-4">
+    <span className="text-green-500 text-lg sm:text-xl md:text-2xl lg:text-3xl">🍃</span>
+    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-800 leading-tight">
+      Frequently Asked Questions
+    </h2>
+    <span className="text-green-500 text-lg sm:text-xl md:text-2xl lg:text-3xl">🍃</span>
+  </div>
 
+
+
+   {/* Gradient Bar */}
+
+          <div className="flex items-center space-x-2 mt-2">
+  {/* Left small block */}
+  <div className="w-4 h-2 bg-red-500 rounded-sm shadow-md"></div>
+
+  {/* Gradient bar - responsive width */}
+  <div className="h-2 bg-gradient-to-r from-red-500 via-orange-400 to-yellow-400 rounded-full shadow-md
+                  w-24 sm:w-32 md:w-48 lg:w-94"></div>
+
+  {/* Right small block */}
+  <div className="w-4 h-2 bg-red-500 rounded-sm shadow-md"></div>
+</div>
+
+</div>
         {/* FAQ Items */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (

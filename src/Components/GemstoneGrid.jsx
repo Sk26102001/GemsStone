@@ -84,26 +84,31 @@ const GemstoneGrid = () => {
   const showLoadMoreButton = visibleCount < allGemstones.length;
 
   return (
-    <section className="py-10 bg-white text-center mt-5">
+    <section className="py-10 bg-white text-center mt-2">
       {/* Updated Decorative Headline */}
-      <div className="flex items-center justify-center mb-8 space-x-4">
-        <span className="text-red-500 text-2xl">🍃</span>
-        <h2 className="text-3xl md:text-4xl font-serif font-bold tracking-wide text-gray-800">
-          Natural Gemstones
-        </h2>
 
-      
+              <div className="w-full py-8 flex flex-col items-center space-y-6">
+        <div className="flex items-center space-x-4 ">
+          <span className="text-red-500 text-2xl">🍃</span>
+          <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-wide text-gray-800 ">
+           Natural Gemstones
+          </h1>
+          <span className="text-red-500 text-2xl">🍃</span>
+        </div>
 
-        <span className="text-red-500 text-2xl">🍃</span>
-
-
-</div>
+        {/* Gradient Bar */}
+        <div className="flex items-center space-x-2">
+          <div className="w-4 h-2 bg-red-500 rounded-sm shadow-md"></div>
+          <div className="w-48 h-2 bg-gradient-to-r from-red-500 via-orange-400 to-yellow-400 rounded-full shadow-md"></div>
+          <div className="w-4 h-2 bg-red-500 rounded-sm shadow-md"></div>
+        </div>
+      </div>
 
       
    
 
 
-      <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-2 gap-8 px- md:px-10 ">
+      <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-2 gap-4 lg:gap-13 px-4 md:px-10 ">
         {visibleGems.map((gem, index) => {
           // Conditional ClassName for newly loaded images (Fade-in effect)
           const isNewlyLoaded = index >= initialCount;
@@ -145,7 +150,7 @@ const GemstoneGrid = () => {
       
       {/* View More Button */}
       {showLoadMoreButton && (
-        <div className="text-center mt-8">
+        <div className="text-center mt-15">
           <button
             type="button"
             onClick={loadMore}

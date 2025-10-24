@@ -1,22 +1,23 @@
 
 
+
 import React from "react";
 
 const HeroSection = () => {
   return (
-    <section className="relative h-[90vh] w-full overflow-hidden">
-      {/* 🎥 Full-width Background Video */}
+    <section className="relative w-full  overflow-hidden max-h-[90vh]   ">
+      {/* 🎥 Background Video */}
       <video
-        className="absolute inset-0 w-full h-full object-cover"
-        src="./Pink Yellow Purple and White Modern Creativity Presentation.mp4"
+        className="w-full  h-full max-h-screen object-cover"
+        src="./Pink Yellow Purple and White Modern Creativity Presentation (2).mp4"
         autoPlay
         loop
         muted
         playsInline
       />
 
-      {/* 🌑 Optional Overlay for subtle cinematic effect */}
-      <div className="absolute inset-0 bg-black/20"></div>
+      {/* 🌑 Subtle Overlay */}
+      <div className="absolute inset-0 pointer-events-none"></div>
     </section>
   );
 };

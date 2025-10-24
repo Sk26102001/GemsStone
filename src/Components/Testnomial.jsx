@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
@@ -32,7 +34,7 @@ const testimonials = [
   },
 ];
 
-export default function Testnomial() {
+export default function Testimonial() {
   const settings = {
     dots: true,
     infinite: true,
@@ -43,16 +45,16 @@ export default function Testnomial() {
     slidesToScroll: 1,
     pauseOnHover: true,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
+      { breakpoint: 1280, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
   };
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-[#fffaf5] via-[#fff5ea] to-[#ffe9d9] overflow-hidden">
-      {/* Sparkle Animation */}
+    <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#fffaf5] via-[#fff5ea] to-[#ffe9d9] overflow-hidden">
+      {/* Soft Glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(18)].map((_, i) => (
+        {[...Array(15)].map((_, i) => (
           <div
             key={i}
             className="absolute rounded-full bg-amber-200 opacity-25 animate-pulse"
@@ -68,64 +70,64 @@ export default function Testnomial() {
       </div>
 
       {/* Header */}
-      <div className="relative z-10 text-center mb-14">
-        <h2 className="text-5xl font-serif font-bold text-[#6b3e08]">
+      <div className="relative z-10 text-center mb-10 sm:mb-14 px-4">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#6b3e08]">
           Customer Reviews
         </h2>
-        <p className="mt-3 text-[#8c6239] text-sm uppercase tracking-widest font-semibold">
+        <p className="mt-2 text-[#8c6239] text-xs sm:text-sm uppercase tracking-widest font-semibold">
           Real Experiences From Our Happy Buyers
         </p>
-        <div className="w-24 h-[3px] bg-gradient-to-r from-[#ffb347] to-[#ffcc70] mx-auto mt-4 rounded-full animate-pulse" />
+        <div className="w-16 sm:w-24 h-[3px] bg-gradient-to-r from-[#ffb347] to-[#ffcc70] mx-auto mt-3 rounded-full animate-pulse" />
       </div>
 
       {/* Carousel */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
         <Slider {...settings}>
           {testimonials.map((item, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 120 }}
-              className="px-3"
+              className="px-2"
             >
-              <div className="bg-white/90 backdrop-blur-sm border border-amber-100 rounded-2xl shadow-md hover:shadow-2xl p-8 h-full flex flex-col transition-all duration-500">
+              <div className="bg-white/90 backdrop-blur-sm border border-amber-100 rounded-xl shadow-md hover:shadow-xl p-4 sm:p-6 flex flex-col justify-between transition-all duration-300 h-full min-h-[260px] sm:min-h-[280px]">
                 {/* Images */}
-                <div className="flex gap-3 justify-center mb-5">
+                <div className="flex justify-center gap-2 sm:gap-3 mb-4">
                   <img
                     src={item.image1}
                     alt="review"
-                    className="w-28 h-28 object-cover rounded-lg shadow-sm"
+                    className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-lg shadow-sm"
                   />
                   <img
                     src={item.image2}
                     alt="review"
-                    className="w-28 h-28 object-cover rounded-lg shadow-sm"
+                    className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-lg shadow-sm"
                   />
                 </div>
 
                 {/* Title + Stars */}
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex items-center justify-center gap-2 mb-1">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                     alt="Google"
-                    className="w-5 h-5"
+                    className="w-5 h-5 sm:w-6 sm:h-6"
                   />
-                  <h3 className="text-lg italic font-semibold text-[#6b3e08]">
+                  <h3 className="text-sm sm:text-base italic font-semibold text-[#6b3e08] text-center">
                     {item.name}
                   </h3>
                 </div>
 
-                <div className="flex gap-1 mb-3">
+                <div className="flex justify-center gap-1 mb-2">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-4 h-4 fill-yellow-400 text-yellow-400"
+                      className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-yellow-400 text-yellow-400"
                     />
                   ))}
                 </div>
 
                 {/* Text */}
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-xs sm:text-sm text-center leading-relaxed line-clamp-4">
                   {item.text}
                 </p>
               </div>
@@ -134,9 +136,9 @@ export default function Testnomial() {
         </Slider>
       </div>
 
-      {/* CTA Button */}
-      <div className="relative text-center mt-16 z-10">
-        <button className="bg-gradient-to-r from-[#ffb347] via-[#ffe08a] to-[#ffb347] text-[#6b3e08] font-semibold px-10 py-3 rounded-full shadow-md border-2 border-[#ffcc80] hover:scale-105 hover:shadow-2xl transition-all duration-300">
+      {/* CTA */}
+      <div className="relative text-center mt-10 sm:mt-14 z-10 px-4">
+        <button className="bg-gradient-to-r from-[#ffb347] via-[#ffe08a] to-[#ffb347] text-[#6b3e08] font-semibold px-6 sm:px-8 py-2 sm:py-2.5 rounded-full shadow-md border border-[#ffcc80] hover:scale-105 hover:shadow-2xl transition-all duration-300 text-xs sm:text-sm md:text-base">
           Read More Reviews
         </button>
       </div>
