@@ -70,7 +70,7 @@ export default function Testnomial() {
       {/* Header */}
       <div className="relative z-10 text-center mb-14">
         <h2 className="text-5xl font-serif font-bold text-[#6b3e08]">
-          User Reviews
+          Customer Reviews
         </h2>
         <p className="mt-3 text-[#8c6239] text-sm uppercase tracking-widest font-semibold">
           Real Experiences From Our Happy Buyers
