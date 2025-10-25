@@ -24,7 +24,7 @@ const fadeUp = {
 export default function CertifiedStonesSection() {
   return (
     <motion.section
-      className="relative bg-gray-50 min-h-screen flex flex-col md:flex-row items-center justify-center px-0 md:px-16 gap-0 overflow-hidden"
+      className="relative bg-gray-50  flex flex-col md:flex-row items-center justify-center px-0 md:px-16 gap-0 overflow-hidden"
       initial="hidden"
       animate="visible"
       variants={fadeUp}
