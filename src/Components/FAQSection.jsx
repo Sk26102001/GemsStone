@@ -38,7 +38,7 @@ const FAQSection = () => {
 <div className="w-full flex flex-col items-center text-center mb-12 px-4">
   <div className="flex items-center justify-center space-x-2 sm:space-x-3 md:space-x-4">
     <span className="text-green-500 text-lg sm:text-xl md:text-2xl lg:text-3xl">🍃</span>
-    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-800 leading-tight">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#6b3e08] leading-tight">
       Frequently Asked Questions
     </h2>
     <span className="text-green-500 text-lg sm:text-xl md:text-2xl lg:text-3xl">🍃</span>

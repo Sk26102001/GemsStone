@@ -28,7 +28,7 @@ const RareGemstoneSection = () => {
       <div className="w-full py-8 flex flex-col items-center space-y-6">
         <div className="flex items-center space-x-4 ">
           <span className="text-red-500 text-2xl">🍃</span>
-          <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-wide text-gray-800 ">
+          <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-wide text-[#6b3e08] ">
             Rare Gemstones
           </h1>
           <span className="text-red-500 text-2xl">🍃</span>

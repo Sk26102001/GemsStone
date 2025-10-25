@@ -2,99 +2,114 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// 💎 Data with Improved Titles for Impact
 const eliteFeatures = [
   {
     image: "https://cdn.dhanshreegems.com/wysiwyg/natural_gemstones_1_.png",
-    title: "100% Natural & Untreated",
+    title: "100% Certified Natural", // Enhanced Title
     desc: "Every gemstone is guaranteed to be free from heat or chemical enhancements, preserving its true, natural beauty.",
   },
   {
     image: "https://cdn.dhanshreegems.com/wysiwyg/lab_certified.png",
-    title: "Certified Purity & Origin",
+    title: "Official Lab Authenticity", // Enhanced Title
     desc: "We provide official lab certification from leading authorities to assure you of the stone's quality and authenticity.",
   },
   {
     image: "https://cdn.dhanshreegems.com/wysiwyg/Direct_from_mines_1.png",
-    title: "Ethical Direct Sourcing",
+    title: "Vetted Ethical Sourcing", // Enhanced Title
     desc: "By sourcing directly from vetted mines, we ensure ethical practices and offer you unmatched value and transparency.",
   },
   {
     image: "https://cdn.dhanshreegems.com/wysiwyg/world_wide_shipping.png",
-    title: "Fully Insured Global Transit",
+    title: "Fully Insured Global Delivery", // Enhanced Title
     desc: "Enjoy peace of mind knowing your precious investment is fully insured and handled with care until it reaches your door.",
   },
 ];
 
+// Animation variants for the container
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15, // Delay between each card's animation
+    },
+  },
+};
+
+// Animation variants for the individual cards
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 12,
+    },
+  },
+};
+
+
 export default function EliteGemstoneFeatures() {
   return (
-    <section className="relative bg-gradient-to-b from-amber-50 via-white to-amber-100 py-20 overflow-hidden">
-      {/* Subtle background glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,215,150,0.2),transparent_70%)] pointer-events-none" />
+    <section className="relative bg-white py-20 overflow-hidden">
+      {/* Subtle background element for premium feel */}
+      <div className="absolute top-0 left-0 w-full h-1/2 bg-amber-50/50 [clip-path:polygon(0%_0%,100%_0%,100%_40%,0%_100%)] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        {/* Section Header */}
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Section Header with Better Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-sm uppercase font-medium tracking-widest text-amber-600 mb-3">
-            Our Foundation
-          </p>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-            The Pillars of Our Promise
+        
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#6b3e08] leading-tight">
+            Why Choose Us
           </h2>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Experience gemstone perfection through integrity, authenticity, and excellence.
+          <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
+            Experience true gemstone perfection built on integrity, verifiable authenticity, and unwavering excellence.
           </p>
         </motion.div>
 
-        {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {eliteFeatures.map((item, i) => (
+        {/* Feature Grid: Single Row on Large Screens */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }} // Trigger animation when 40% of component is visible
+        >
+          {eliteFeatures.map((item) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="flex items-start space-x-6 bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-amber-100 hover:shadow-xl hover:bg-white transition-all duration-300"
+              variants={itemVariants}
+              className="group flex flex-col items-center text-center p-6 bg-white rounded-3xl border border-gray-100 shadow-xl shadow-amber-50/50 hover:shadow-2xl hover:shadow-amber-100/70 transition-all duration-300 transform hover:-translate-y-1"
             >
-              {/* Image with glow */}
-              <div className="relative flex-shrink-0 w-16 h-16">
-                <div className="absolute inset-0 bg-amber-100 rounded-full blur-lg opacity-40" />
+              {/* Image / Icon with premium styling */}
+              <div className="relative flex-shrink-0 w-20 h-20 mb-4">
+                <div className="absolute inset-0 bg-amber-100 rounded-full blur-xl opacity-20" />
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="relative w-16 h-16 object-contain transition-transform duration-300 hover:scale-110"
+                  className="relative w-full h-full object-contain p-2"
                 />
               </div>
 
               {/* Text Content */}
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-amber-700 transition-colors duration-300">
+                {item.title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {item.desc}
+              </p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Footer */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="mt-16 pt-8 border-t border-amber-200 text-center"
-        >
-          <p className="text-sm text-gray-600">
-            Browse our curated collection and experience the difference true quality makes.
-          </p>
-          <button className="mt-6 px-6 py-2 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-white font-medium shadow-md hover:from-amber-500 hover:to-orange-600 transition-all duration-300">
-            Explore Collection
-          </button>
-        </motion.div> */}
+
       </div>
     </section>
   );

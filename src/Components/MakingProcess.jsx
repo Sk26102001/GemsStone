@@ -16,36 +16,35 @@ const MakingProcess = () => {
       desc: "We handpick natural, high-quality gemstones from trusted sources.",
       icon: <Gem className="w-10 h-10 text-yellow-600 mx-auto mb-4" />,
     },
-    {
+       {
       id: 2,
-      title: "Purification",
-      desc: "Each gem is purified using sacred mantras and Ganga Jal rituals.",
-      icon: <Droplets className="w-10 h-10 text-yellow-600 mx-auto mb-4" />,
-    },
-    {
-      id: 3,
-      title: "Energization in Kashi",
-      desc: "Our Vedic Acharyas energize every gem to unlock its divine power.",
-      icon: <Sun className="w-10 h-10 text-yellow-600 mx-auto mb-4" />,
-    },
-    {
-      id: 4,
       title: "Certification",
       // desc: "Each gemstone is certified for authenticity and purity.",
       desc: "Each gemstone is certified for authenticity and purity by recognized labs.",
       icon: <BadgeCheck className="w-10 h-10 text-yellow-600 mx-auto mb-4" />,
     },
+    {
+      id: 3,
+      title: "Purification",
+      desc: "Each gem is purified using sacred mantras and Ganga Jal rituals.",
+      icon: <Droplets className="w-10 h-10 text-yellow-600 mx-auto mb-4" />,
+    },
+    {
+      id: 4,
+      title: "Energization in Kashi",
+      desc: "Our Vedic Acharyas energize every gem to unlock its divine power.",
+      icon: <Sun className="w-10 h-10 text-yellow-600 mx-auto mb-4" />,
+    },
+ 
   ];
 
   return (
     <section className="bg-gray-50 py-16 md:py-24">
       {/* ===== Video Section Title and Container ===== */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-12">
-        <p className="text-sm font-semibold text-yellow-600 uppercase tracking-wider mb-2">
-          Ancient Wisdom, Modern Craftsmanship
-        </p>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-          Witness the Sacred Transformation
+ 
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[#6b3e08]  mb-4">
+          The Journey of a Gemstone
         </h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
           See the journey of your gemstone from its natural state to a fully energized, sacred talisman.
@@ -59,7 +58,7 @@ const MakingProcess = () => {
       <div className="max-w-7xl mx-auto px-4 mb-16 md:mb-20">
         <div className="w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-yellow-100/70">
           <video
-            src="gems.mp4" // Ensure this path is correct
+            src="./process.mp4" // Ensure this path is correct
             autoPlay
             muted
             loop
