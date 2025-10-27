@@ -12,7 +12,7 @@ const HeroSection = () => {
       {/* 🎥 Background Video/Image */}
       <img
         className="w-full h-full max-h-screen object-cover"
-        src="./baner.jpg"
+        src="./Gemstone Banner 2.png"
         autoPlay
         loop
         muted

@@ -2,6 +2,8 @@
 
 import React from "react";
 
+import { useNavigate } from 'react-router-dom';
+
 // Full list of gemstones
 const allGemstones = [
   {
@@ -44,10 +46,10 @@ const allGemstones = [
     hindi: "(MOTI)",
     src: "https://cdn.dhanshreegems.com/wysiwyg/home/pearl.png",
   },
-
 ];
 
 const GemstoneGrid = () => {
+    const navigate = useNavigate();
   return (
     <section className="py-10 bg-white text-center mt-2">
       {/* Decorative Heading */}
@@ -69,53 +71,36 @@ const GemstoneGrid = () => {
       </div>
 
       {/* Gemstone Grid */}
-      <div className="grid md:grid-cols-4 sm:grid-cols-1 grid-cols-1 gap-4 lg:gap-13 px-4 md:px-10">
+      <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 px-4 md:px-10">
         {allGemstones.map((gem, index) => (
           <div
             key={index}
             className="flex flex-col items-center transition-transform duration-300 hover:scale-105"
           >
-            <div
-              className={`w-full h-30 flex items-center justify-center ${
-                gem.name === "CAT'S EYE" ? "rounded-xl" : ""
-              }`}
-            >
+            <div className="w-full h-30 flex items-center justify-center">
               <img
                 src={gem.src}
                 alt={gem.name}
                 className="object-contain w-full h-full"
               />
             </div>
+            <h2 className="mt-2 text-lg font-semibold text-[#6b3e08]">
+              {gem.name}
+            </h2>
+            <p className="text-sm text-gray-500">{gem.hindi}</p>
           </div>
         ))}
       </div>
 
-      {/* View More Button (UI only – no functionality) */}
-      <div className="text-center mt-15">
-        <button
-          type="button"
-          className="font-semibold text-lg md:text-xl py-3 px-8 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full shadow-lg hover:from-yellow-600 hover:to-orange-600 transition duration-300 cursor-default"
-        >
-          View More Gems
-        </button>
+      {/* View More Button */}
+      <div className="text-center mt-10">
+<button
+        onClick={() => navigate('/GemsStone/subpage')}
+        className="font-semibold text-lg md:text-xl py-3 px-8 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full shadow-lg hover:from-yellow-600 hover:to-orange-600 transition duration-300"
+      >
+        View More
+      </button>
       </div>
-
-      {/* Fade-in animation (optional) */}
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.5s ease-out;
-        }
-      `}</style>
     </section>
   );
 };

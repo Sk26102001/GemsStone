@@ -6,22 +6,22 @@ import { motion } from "framer-motion";
 const eliteFeatures = [
   {
     image: "https://cdn.dhanshreegems.com/wysiwyg/natural_gemstones_1_.png",
-    title: "100% Certified Natural", // Enhanced Title
+    title: "100% Certified Natural",
     desc: "Every gemstone is guaranteed to be free from heat or chemical enhancements, preserving its true, natural beauty.",
   },
   {
     image: "https://cdn.dhanshreegems.com/wysiwyg/lab_certified.png",
-    title: "Official Lab Authenticity", // Enhanced Title
+    title: "Official Lab Authenticity",
     desc: "We provide official lab certification from leading authorities to assure you of the stone's quality and authenticity.",
   },
   {
     image: "https://cdn.dhanshreegems.com/wysiwyg/Direct_from_mines_1.png",
-    title: "Vetted Ethical Sourcing", // Enhanced Title
+    title: "Vetted Ethical Sourcing",
     desc: "By sourcing directly from vetted mines, we ensure ethical practices and offer you unmatched value and transparency.",
   },
   {
     image: "https://cdn.dhanshreegems.com/wysiwyg/world_wide_shipping.png",
-    title: "Fully Insured Global Delivery", // Enhanced Title
+    title: "Fully Insured Global Delivery",
     desc: "Enjoy peace of mind knowing your precious investment is fully insured and handled with care until it reaches your door.",
   },
 ];
@@ -31,7 +31,7 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.15, // Delay between each card's animation
+      staggerChildren: 0.15,
     },
   },
 };
@@ -53,39 +53,42 @@ const itemVariants = {
 
 export default function EliteGemstoneFeatures() {
   return (
-    <section className="relative bg-white py-20 overflow-hidden">
-      {/* Subtle background element for premium feel */}
-      <div className="absolute top-0 left-0 w-full h-1/2 bg-amber-50/50 [clip-path:polygon(0%_0%,100%_0%,100%_40%,0%_100%)] pointer-events-none" />
+    // 1. Reduced height (py-20 to py-12) and 2. Applied full background color (bg-amber-50)
+    <section className="relative bg-amber-50 py-8 overflow-hidden"> 
+      
+      {/* 🛑 Removed the 'absolute top-0' half-background div */}
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Section Header with Better Title */}
+        
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12" // Reduced margin to save height
         >
         
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#6b3e08] leading-tight">
             Why Choose Us
           </h2>
-          <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
+          <p className="text-gray-600 mt-3 max-w-3xl mx-auto">
             Experience true gemstone perfection built on integrity, verifiable authenticity, and unwavering excellence.
           </p>
         </motion.div>
 
-        {/* Feature Grid: Single Row on Large Screens */}
+        {/* Feature Grid */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }} // Trigger animation when 40% of component is visible
+          viewport={{ once: true, amount: 0.4 }}
         >
           {eliteFeatures.map((item) => (
             <motion.div
               key={item.title}
               variants={itemVariants}
+              // Card background is white for contrast against the amber background
               className="group flex flex-col items-center text-center p-6 bg-white rounded-3xl border border-gray-100 shadow-xl shadow-amber-50/50 hover:shadow-2xl hover:shadow-amber-100/70 transition-all duration-300 transform hover:-translate-y-1"
             >
               {/* Image / Icon with premium styling */}
@@ -108,8 +111,6 @@ export default function EliteGemstoneFeatures() {
             </motion.div>
           ))}
         </motion.div>
-
-
       </div>
     </section>
   );
