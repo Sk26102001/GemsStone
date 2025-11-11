@@ -1,10 +1,12 @@
 import React from 'react'
-import HeroSection from '../components/HeroSection.jsx'
+import HeroSection from '../Components/HeroSection.jsx'
 import GemstoneGrid from '../components/GemstoneGrid.jsx'
 import RareGemstoneSection from '../components/RareGemstoneSection.jsx'
+import Chat from '../components/Chat.jsx'
 
 import MakingProcess from '../components/MakingProcess.jsx'
-import Testnomial from '../components/Testnomial.jsx' 
+import Review from '../components/Review.jsx'
+// import Testnomial from '../components/Testnomial.jsx' 
 import GemstoneCertificate from '../components/GemstoneCertificate.jsx'
 import FAQSection from '../components/FAQSection.jsx'
 import GemstoneFeatures from '../components/GemstoneFeatures.jsx'
@@ -17,8 +19,9 @@ export default function LandingPage() {
       <GemstoneGrid/>
       <RareGemstoneSection/> 
       <MakingProcess/>
-      <Testnomial/>
+      <Review/>
       <GemstoneCertificate/>
+      <Chat/>
       <FAQSection/>
       <GemstoneFeatures/>
      

@@ -13,26 +13,26 @@ const MakingProcess = () => {
     {
       id: 1,
       title: "Gem Selection",
-      desc: "We handpick natural, high-quality gemstones from trusted sources.",
+      // desc: "We handpick natural, high-quality gemstones from trusted sources.",
       icon: <Gem className="w-10 h-10 text-yellow-600 mx-auto mb-4" />,
     },
        {
       id: 2,
       title: "Certification",
       // desc: "Each gemstone is certified for authenticity and purity.",
-      desc: "Each gemstone is certified for authenticity and purity by recognized labs.",
+      // desc: "Each gemstone is certified for authenticity and purity by recognized labs.",
       icon: <BadgeCheck className="w-10 h-10 text-yellow-600 mx-auto mb-4" />,
     },
     {
       id: 3,
       title: "Purification",
-      desc: "Each gem is purified using sacred mantras and Ganga Jal rituals.",
+      // desc: "Each gem is purified using sacred mantras and Ganga Jal rituals.",
       icon: <Droplets className="w-10 h-10 text-yellow-600 mx-auto mb-4" />,
     },
     {
       id: 4,
       title: "Energization in Kashi",
-      desc: "Our Vedic Acharyas energize every gem to unlock its divine power.",
+      // desc: "Our Vedic Acharyas energize every gem to unlock its divine power.",
       icon: <Sun className="w-10 h-10 text-yellow-600 mx-auto mb-4" />,
     },
  
@@ -55,8 +55,8 @@ const MakingProcess = () => {
         1. Changed 'max-w-6xl' to 'max-w-full' for a full-width experience within the section padding.
         2. Increased video height for a more cinematic feel.
       */}
-      <div className="max-w-7xl mx-auto px-4 mb-16 md:mb-20">
-        <div className="w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-yellow-100/70">
+      <div className="max-w-8xl mx-auto px-4 mb-16 md:mb-20">
+        <div className="w-full  rounded-3xl overflow-hidden shadow-2xl border-4 border-yellow-100/70">
           <video
             src="./process.mp4" // Ensure this path is correct
             autoPlay
@@ -65,7 +65,7 @@ const MakingProcess = () => {
             playsInline
             controls // Added controls for better user experience
             // Increased height on larger screens
-            className="w-full h-[350px] md:h-[550px] object-cover" 
+            className="w-full  h-[350px] md:h-[550px] object-cover" 
           >
             Your browser does not support the video tag.
           </video>

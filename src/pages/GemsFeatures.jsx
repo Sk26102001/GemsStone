@@ -37,7 +37,7 @@ const features = [
 
 export default function GemsFeatures() {
   return (
-    <section className="bg-amber-50/50 w-full mt-20 font-sans">
+    <section className="bg-amber-50/50 w-full  font-sans">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
