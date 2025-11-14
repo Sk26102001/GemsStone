@@ -42,10 +42,11 @@ const { gem, details, globalIndex = 0 } = location.state || {};
   }
 
   // ---------- RedCoral-like state & data (merged) ----------
-  const [diamondqualitys, setDiamondquality] = useState("null");
-    const [ringsizesystems, setRingsizesystem] = useState("null");
-      const [ringsizes, setRingsize] = useState("null");
-      const [poojaOption, setPoojaOption] = useState("No Energization");
+  // const [diamondqualitys, setDiamondquality] = useState("null");
+  //   const [ringsizesystems, setRingsizesystem] = useState("null");
+  //     const [ringsizes, setRingsize] = useState("null");
+
+  const [poojaOption, setPoojaOption] = useState("No Energization");
   const [selectedType, setSelectedType] = useState(null);
   const [selectedMetal, setSelectedMetal] = useState("");
   const [selectedDesignImage, setSelectedDesignImage] = useState(null);
@@ -630,14 +631,6 @@ const ringsize = [
 )}
 
 
-
-
-
-
-
-
-
-
         </div>
 
         {/* Right: Product Details */}
@@ -673,7 +666,7 @@ const ringsize = [
           </div>
 
           {/* Weight select */}
-          <div className="flex justify-between items-center py-3 border-b-2 border-gray-400 border-dotted mb-4">
+          {/* <div className="flex justify-between items-center py-3 border-b-2 border-gray-400 border-dotted mb-4">
             <label className="font-medium text-sm text-gray-800">
               WEIGHT <span className="text-red-500">*</span>
             </label>
@@ -685,7 +678,7 @@ const ringsize = [
                 <option key={i}>{w}</option>
               ))}
             </select>
-          </div>
+          </div> */}
 
           {/* Certification */}
           <div className="flex justify-between items-center py-3 border-b-2 border-gray-400 border-dotted mb-4">
@@ -698,6 +691,7 @@ const ringsize = [
               ))}
             </select>
           </div>
+
 
           {/* Pooja */}
           <div className="flex justify-between items-center py-3 border-b-2 border-gray-400 border-dotted mb-4">
