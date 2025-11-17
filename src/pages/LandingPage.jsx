@@ -6,10 +6,12 @@ import Chat from '../components/Chat.jsx'
 
 import MakingProcess from '../components/MakingProcess.jsx'
 import Review from '../components/Review.jsx'
+// import GemstoneSliderPage from '../components/GemstoneSliderPage.jsx'
 // import Testnomial from '../components/Testnomial.jsx' 
 import GemstoneCertificate from '../components/GemstoneCertificate.jsx'
 import FAQSection from '../components/FAQSection.jsx'
 import GemstoneFeatures from '../components/GemstoneFeatures.jsx'
+import VideoTestimonial from '../components/VideoTestimonial.jsx'
 
 
 export default function LandingPage() {
@@ -20,14 +22,13 @@ export default function LandingPage() {
       <RareGemstoneSection/> 
       <MakingProcess/>
       <Review/>
+      <VideoTestimonial/>
       <GemstoneCertificate/>
       <Chat/>
       <FAQSection/>
       <GemstoneFeatures/>
-     
-       
+      {/* <GemstoneSliderPage/> */}
 
-   
     </div>
   )
 }

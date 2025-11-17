@@ -42,6 +42,7 @@ const getWeightRange = (weightString) => {
     };
 };
 
+
 // --- Filter Component (Accordion) with Scrollable Content ---
 const FilterAccordion = ({
     title,
@@ -110,6 +111,8 @@ const FilterAccordion = ({
         </div>
     );
 };
+
+
 
 // --- Gemstone Listing Card ---
 const GemstoneCard = ({ gem, details, globalIndex, onNavigate, onAddToCart }) => {
@@ -180,6 +183,8 @@ const GemstoneCard = ({ gem, details, globalIndex, onNavigate, onAddToCart }) =>
         </div>
     );
 };
+
+
 
 // --- Desktop Sort Dropdown ---
 const SortDropdown = ({ options, currentSort, onSortChange }) => {
@@ -393,6 +398,8 @@ const GemstoneDetailPage = () => {
         "11.00 ratti (9.90 carat)",
     ]), []);
 
+
+
     // Navigation handler
     const handleCardClick = useCallback((gem) => {
         navigate(`/GemsStone/gemstone-detail/${gemName}/${gem.id}`, {
@@ -431,6 +438,29 @@ const GemstoneDetailPage = () => {
             };
         });
     }, []);
+
+
+//  gems origin
+
+const gemstoneDetails = GEMSTONE_DETAILS[gemName];
+
+
+const gemstoneOrigins = useMemo(() => {
+    if (!gemstoneDetails) return [];
+
+    const originList = gemstoneDetails.origin
+        ?.split(",")
+        .map((o) => o.trim()) || [];
+
+    const designOrigins = gemstoneDetails.relatedDesigns
+        ?.map((d) => d.origin)
+        .filter(Boolean) || [];
+
+    return [...new Set([...originList, ...designOrigins])];
+}, [gemstoneDetails]);
+
+
+
 
     // Function to process and filter designs with IMPROVED WEIGHT FILTERING
     const getFilteredAndSortedDesigns = useCallback(() => {
@@ -717,11 +747,12 @@ const GemstoneDetailPage = () => {
                                 onFilterChange={handleFilterChange}
                             />
                             <FilterAccordion
-                                title="Origin"
-                                options={["Sri Lanka", "Bangkok", "Ceylon", "Kashmir", "Burma"]}
-                                selectedFilters={selectedFilters}
-                                onFilterChange={handleFilterChange}
-                            />
+    title="Origin"
+    options={gemstoneOrigins}   // 👈 Only show origins of this gemstone!
+    selectedFilters={selectedFilters}
+    onFilterChange={handleFilterChange}
+/>
+
                             <FilterAccordion
                                 title="Treatment"
                                 options={["Heated", "Unheated", "Treated"]}
@@ -743,7 +774,7 @@ const GemstoneDetailPage = () => {
                             Showing {totalDesigns} {totalDesigns === 1 ? 'Item' : 'Items'}
                             {activeFilterCount > 0 && ` (Filtered)`}
                         </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
                             {designsToShow.length > 0 ? (
                                 designsToShow.map((gem, index) => (
                                     <GemstoneCard
@@ -757,7 +788,7 @@ const GemstoneDetailPage = () => {
                                 ))
                             ) : (
                                 <div className="col-span-full text-center py-12">
-                                    <p className="text-xl text-gray-500">No gemstones match your current filters.</p>
+                                    <p className="text-xl text-gray-500"> No Match Found</p>
                                     <button
                                         onClick={() => setSelectedFilters({})}
                                         className="mt-4 px-6 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition"
@@ -789,7 +820,7 @@ const GemstoneDetailPage = () => {
                 />
 
                 {/* Floating Chat Button */}
-                <Chat />
+                <div className="mt-15"><Chat /></div>
                 <GemsFeatures />
             </div>
         </div>

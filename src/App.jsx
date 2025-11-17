@@ -9,6 +9,7 @@ import GemstoneFinalPage from "./pages/GemstoneFinalPage.jsx";
 
 
 
+
 export default function App() {
   return (
    
@@ -17,6 +18,8 @@ export default function App() {
         <Route path="/GemsStone/subpage" element={<SubPage />} />
       <Route path="/GemsStone/gemstone-detail/:gemName" element={<GemstoneDetailPage />} />
         <Route path="/GemsStone/gemstone-detail/:gemName/:id" element={<GemstoneFinalPage />} />
+      
+
 
   
       </Routes>

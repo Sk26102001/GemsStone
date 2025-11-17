@@ -7,7 +7,7 @@ export default function Chat() {
   const [isCallOpen, setIsCallOpen] = useState(false);
 
   // Replace with your business or personal WhatsApp number
-  const whatsappNumber = "919876543210"; // <-- no '+' sign here
+  const whatsappNumber = "918969244564"; // <-- no '+' sign here
   const whatsappMessage = "Hi! I’d like to know more about gemstones 💎";
 
   const openWhatsApp = () => {
@@ -20,14 +20,14 @@ export default function Chat() {
   return (
     <section className="relative flex flex-col md:flex-row items-center justify-center overflow-hidden h-[50vh]">
       {/* === Background Gradient === */}
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-r from-blue-300 via-blue-200 to-pink-200 rounded-t-[120px]" />
+      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-r from-orange-400 via-white to-yellow-400 rounded-t-[120px]" />
 
       {/* === Expert Image === */}
       <div className="absolute left-0 bottom-0 w-1/2 h-full z-10 flex items-end pointer-events-none">
         <img
-          src="https://imgcdn1.gempundit.com/media/wysiwyg/expert-image-gp.png"
+          src="https://mktelecom.in/wp-content/uploads/2024/02/cuctomer-care.png"
           alt="Gem Expert"
-          className="object-contain h-full max-h-[90%] translate-x-25 md:translate-x-24"
+          className="object-contain h-full max-h-[95%] translate-x-25 md:translate-x-24"
         />
       </div>
 
@@ -35,7 +35,7 @@ export default function Chat() {
       <div className="relative z-30 flex w-full md:w-1/2 items-center justify-center h-full px-6">
         <div className="bg-white shadow-2xl rounded-2xl overflow-hidden backdrop-blur-md w-full">
           {/* Card Header */}
-          <div className="bg-gradient-to-r from-blue-50 via-pink-50 to-pink-100 p-6 md:p-8">
+          <div className="bg-gradient-to-r from-orange-100 via-white to-yellow-100 p-6 md:p-8">
             <h2 className="text-xl md:text-2xl font-medium text-gray-800 leading-snug">
               Find your perfect gemstone with our...
             </h2>
@@ -72,7 +72,7 @@ export default function Chat() {
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-col md:flex-row justify-center md:justify-start gap-4 md:gap-6">
+            <div className="flex flex-col md:flex-row justify-center md:justify-center gap-4 md:gap-6">
               <button
                 onClick={openWhatsApp}
                 className="relative z-50 flex items-center justify-center gap-2 border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white text-sm md:text-lg py-2 md:py-3 px-6 md:px-10 rounded-xl transition-all duration-200 shadow-md"
@@ -109,13 +109,13 @@ export default function Chat() {
               For quick help, please call us on:
             </p>
             <a
-              href="tel:+919876543210"
+              href="tel:+918969244564"
               className="block text-lg font-bold text-green-600 mb-4"
             >
-              +91 98765 43210
+              +91 8969244564
             </a>
             <button
-              onClick={() => (window.location.href = "tel:+919876543210")}
+              onClick={() => (window.location.href = "tel:+918969244564")}
               className="w-full bg-black hover:bg-gray-800 text-white py-2 rounded-lg font-semibold transition"
             >
               Call Now

@@ -17,7 +17,7 @@ export const GEMSTONE_DETAILS = {
   "relatedDesigns": [
     {
       "id": 101,
-      "src": "https://placehold.co/300x200/ffc107/000000?text=Pukhraj+Oval+101",
+      "src": "https://imgcdn1.gempundit.com/media/catalog/product/g/e/gem-emer-slux-zamb-1-20190805_1.jpg?imgeng=/w_960/f_webp/cmpr_20/s_7",
       "shape": "Oval",
       "cut": "Faceted",
       "treatment": "Heated",
@@ -8117,13 +8117,6 @@ export const GEMSTONE_DETAILS = {
     }
   ]
 }
-    
-
-
-
-
-
-
 
 };
 
